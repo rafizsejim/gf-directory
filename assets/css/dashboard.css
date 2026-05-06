@@ -1,0 +1,219 @@
+/* GF Directory: dashboard + login prompt */
+
+.gfd-dash {
+	margin-block: 24px;
+}
+
+.gfd-dash__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+}
+
+.gfd .gfd-dash__title {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--gfd-text);
+	letter-spacing: -0.01em;
+}
+
+.gfd-dash__tabs {
+	display: inline-flex;
+	gap: 2px;
+	background: var(--gfd-surface);
+	border: 1px solid var(--gfd-border);
+	border-radius: var(--gfd-radius-pill);
+	padding: 4px;
+}
+
+.gfd-dash__tab {
+	padding: 8px 18px;
+	border-radius: var(--gfd-radius-pill);
+	color: var(--gfd-text-muted);
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: background-color .15s ease, color .15s ease;
+}
+
+.gfd-dash__tab:hover {
+	color: var(--gfd-text);
+}
+
+.gfd-dash__tab.is-active {
+	background: var(--gfd-text);
+	color: #FFFFFF;
+}
+
+.gfd-dash__grid {
+	margin-top: 12px;
+}
+
+.gfd-dash__submissions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.gfd-dash__submission {
+	background: var(--gfd-surface);
+	border: 1px solid var(--gfd-border);
+	border-radius: var(--gfd-radius);
+	padding: 16px 20px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 16px;
+	align-items: center;
+	box-shadow: var(--gfd-shadow-sm);
+}
+
+.gfd .gfd-dash__sub-title {
+	margin: 0 0 4px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--gfd-text);
+}
+
+.gfd .gfd-dash__sub-meta {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var(--gfd-text-muted);
+}
+
+.gfd-dash__sub-aside {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.gfd-dash__status {
+	font-size: 0.78rem;
+	font-weight: 600;
+	padding: 4px 12px;
+	border-radius: var(--gfd-radius-pill);
+}
+
+.gfd-dash__status.is-published {
+	background: var(--gfd-badge-bg);
+	color: var(--gfd-badge);
+}
+
+.gfd-dash__status.is-pending {
+	background: #FFF6E0;
+	color: #B07206;
+}
+
+.gfd-dash__view {
+	color: var(--gfd-accent);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.gfd-dash__view:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+	.gfd-dash__submission {
+		grid-template-columns: 1fr;
+	}
+	.gfd-dash__sub-aside {
+		justify-content: space-between;
+	}
+}
+
+/* Empty subtitle (used by dashboard empties) */
+.gfd-empty__sub {
+	margin: 4px 0 0;
+	font-size: 0.85rem;
+}
+
+/* Login prompt */
+.gfd-login {
+	background: var(--gfd-surface);
+	border: 1px solid var(--gfd-border);
+	border-radius: var(--gfd-radius);
+	padding: 56px 32px;
+	text-align: center;
+	box-shadow: var(--gfd-shadow-sm);
+}
+
+.gfd-login__art {
+	font-size: 2.5rem;
+	color: var(--gfd-text-muted);
+	margin-bottom: 8px;
+}
+
+.gfd .gfd-login__title {
+	margin: 0 0 6px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--gfd-text);
+}
+
+.gfd .gfd-login__text {
+	margin: 0 0 18px;
+	color: var(--gfd-text-muted);
+}
+
+.gfd-login__cta {
+	display: inline-block;
+	background: var(--gfd-accent);
+	color: var(--gfd-accent-fg);
+	padding: 10px 22px;
+	border-radius: var(--gfd-radius-pill);
+	text-decoration: none;
+	font-weight: 600;
+	transition: filter .15s ease;
+}
+
+.gfd-login__cta:hover {
+	filter: brightness(1.1);
+	color: var(--gfd-accent-fg);
+}
+
+/* Save button states (used across views) */
+.gfd-card__icon-btn[data-gfd-saved="1"],
+.gfd-row__icon-btn[data-gfd-saved="1"],
+.gfd-single__action[data-gfd-saved="1"] {
+	color: #E54D4D;
+	border-color: #E54D4D;
+}
+
+.gfd-card__icon-btn.is-saving,
+.gfd-row__icon-btn.is-saving,
+.gfd-single__action.is-saving {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.gfd-toast {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: var(--gfd-text);
+	color: #FFFFFF;
+	padding: 10px 18px;
+	border-radius: var(--gfd-radius-pill);
+	font-size: 0.85rem;
+	z-index: 9999;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+	opacity: 0;
+	transition: opacity .2s ease;
+}
+
+.gfd-toast.is-visible {
+	opacity: 1;
+}
+
+.gfd-toast a {
+	color: #FFFFFF;
+	text-decoration: underline;
+	margin-left: 8px;
+}

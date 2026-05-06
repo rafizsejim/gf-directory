@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gf-directory/directory",
+	"title": "GF Directory",
+	"category": "widgets",
+	"icon": "grid-view",
+	"description": "Render a Gravity Forms directory archive with search, filters and saves.",
+	"keywords": [ "gravity forms", "directory", "listings", "cards" ],
+	"textdomain": "gf-directory",
+	"attributes": {
+		"formId": { "type": "integer", "default": 0 }
+	},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false
+	},
+	"editorScript": "file:./edit.js",
+	"render": "file:./render.php"
+}

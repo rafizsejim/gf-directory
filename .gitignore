@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.swp
+*~
+
+# Logs
+*.log
+debug.log
+
+# PHP dependency manager output (we ship our own autoloader)
+vendor/
+composer.lock
+
+# Node (kept here in case future build tooling is added)
+node_modules/
+
+# Local environment files
+.env
+.env.local
