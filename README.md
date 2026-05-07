@@ -1,6 +1,6 @@
 # GF Directory
 
-> Turn Gravity Forms entries into a polished public directory with cards, filters, search, saves and a logged-in user dashboard. Single-file install. No external services. No code touching the Gravity Forms plugin.
+> Turn Gravity Forms entries into a polished public directory with cards, filters, search, saves and a logged-in user dashboard. Drop-in install. No build step. No external services. No code touching the Gravity Forms plugin.
 
 GF Directory is a Gravity Forms add-on that takes any form's approved entries and displays them as a modern frontend directory: card grid in two styles, list view, hero search bar with up to four filter slots, single-entry detail pages with related listings, plus saved listings and submissions tabs in a logged-in user dashboard.
 
@@ -10,8 +10,10 @@ Originally built to scratch a real itch: turning a community submission form int
 
 1. Install Gravity Forms.
 2. Install GF Directory and activate.
-3. Visit **Forms → Directory → Install demo**.
+3. Visit **Tools → GF Directory** in WP admin and click **Install demo**.
 4. The plugin creates a Properties form, six pre-approved sample listings, an archive page and a dashboard page. The success screen links straight to all three.
+
+To remove everything the demo created, return to **Tools → GF Directory** and click **Remove demo**.
 
 ## Features
 
@@ -73,7 +75,11 @@ No attributes. Logged-in users see Saved + My Submissions tabs. Anonymous visito
 {your-directory-page}/listing/{entry_id}/
 ```
 
-Created via `add_rewrite_endpoint` so it works on any host page without slug configuration. Falls back to `?gfd_entry=N` on sites without permalinks. Visit **Settings → Permalinks → Save** once after activation to flush.
+Created via `add_rewrite_endpoint` so it works on any host page without slug configuration. Falls back to `?gfd_entry=N` on sites without permalinks. Rewrite rules auto-flush on first load after activation, so no manual permalink reset is required.
+
+### Admin tools
+
+Visit **Tools → GF Directory** to install or remove the demo data set, and to see deep links to the demo form, archive page and dashboard page once installed.
 
 ## Architecture
 
